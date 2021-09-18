@@ -29,7 +29,15 @@ class CharacterWrapTest {
         assertEquals("ABC\n${CharacterWrap.NBSP}", CharacterWrap.toWrap("ABC\n "))
         assertEquals("ABC\n.${CharacterWrap.WJ}", CharacterWrap.toWrap("ABC\n."))
 
-        //
+        // Special
+        assertEquals(
+            "${CharacterWrap.NBSP}${CharacterWrap.NBSP}",
+            CharacterWrap.toWrap("  ")
+        )
+        assertEquals(
+            "${CharacterWrap.NBSP}${CharacterWrap.NBSP}",
+            CharacterWrap.toWrap("${CharacterWrap.NBSP} ")
+        )
         assertEquals(
             ".${CharacterWrap.WJ}${CharacterWrap.NBSP}",
             CharacterWrap.toWrap(".${CharacterWrap.WJ} ")

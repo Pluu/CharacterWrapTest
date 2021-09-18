@@ -56,9 +56,8 @@ class MainActivity : AppCompatActivity() {
                 val result = CharacterWrap.toWrap(s.toString())
                 binding.iv.text = result.toCode()
 
-                if (!isDelete) {
-                    s.replace(0, s.length, result)
-                }
+                s.replace(0, s.length, result)
+
                 Log.d("TAG", "Changed=[${s.toString().toCode()}]")
                 binding.edit2.addTextChangedListener(this)
             }
